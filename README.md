@@ -1254,11 +1254,16 @@ Output:
 
 
 
- 
 
+**Output:**
 
-3. The client should provide the values of a and b. The server will solve the equation (a+b)2=a2+2ab+b2 and will give back the value of equation using RMI.
-EquationService.java (Remote Interface):
+---
+
+### 3.3 Equation Solver using RMI - (a+b)²
+
+**Description:** This practical implements an algebraic equation solver using RMI. The server computes the expansion of (a+b)² = a² + 2ab + b² given values of a and b. Demonstrates RMI with mathematical computations and parameter passing.
+
+**EquationService.java (Remote Interface):**
 package RMI_based;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1421,9 +1426,15 @@ Output:
  
 
 
-4.Remote Method Invocation (Graphical User Interface)
-1. Design a Graphical User Interface for addition of two numbers. Implement using RMI
-AdditionService.java (Remote Interface):
+## 4. Remote Method Invocation with Graphical User Interface
+
+This section combines RMI with Java Swing GUI, creating user-friendly interfaces for distributed applications. Demonstrates integration of RMI backend services with interactive frontend clients.
+
+### 4.1 Addition GUI using RMI
+
+**Description:** This practical implements a graphical calculator for addition using RMI. The GUI client provides text fields for input numbers and displays results. The server performs the addition remotely. Shows integration of Swing components with RMI for user-friendly distributed computing.
+
+**AdditionService.java (Remote Interface):
 package RMI_GUI;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1533,8 +1544,11 @@ Output:
  
 
 
-2. Design a Graphical User Interface (GUI) to find factorial of given numbers. Implement using RMI
-FactorialService.java (Remote Interface):
+### 4.2 Factorial Calculator GUI using RMI
+
+**Description:** This practical implements a factorial calculator with GUI using RMI. The client provides an input field for the number, and the server computes the factorial remotely. Demonstrates RMI with iterative algorithms and larger result values (using long data type).
+
+**FactorialService.java (Remote Interface):
 package RMI_GUI;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1646,8 +1660,11 @@ Output:
 
 
 
-3. Design a Graphical User Interface (GUI) based Basic calculator by implementing RMI
-CalculatorService.java.java (Remote Interface):
+### 4.3 Basic Calculator GUI using RMI
+
+**Description:** This practical implements a complete basic calculator with GUI supporting all four arithmetic operations (add, subtract, multiply, divide) using RMI. The server provides separate methods for each operation with error handling (division by zero). Demonstrates comprehensive RMI service with multiple methods.
+
+**CalculatorService.java (Remote Interface):
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  public interface CalculatorService extends Remote {
@@ -1760,8 +1777,11 @@ Output:
 
 
 
-4. Design a Graphical User Interface (GUI) to find greatest of two numbers. Implement using RMI
-GreatestService.java (Remote Interface):
+### 4.4 Greatest Number Finder GUI using RMI
+
+**Description:** This practical implements a comparison service using RMI with GUI. The client inputs two numbers, and the server determines the greatest using conditional logic. Demonstrates RMI with comparison operations and decision-making on the server side.
+
+**GreatestService.java (Remote Interface):
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  
@@ -1869,8 +1889,11 @@ Output:
 
 
 
-5. Design a Graphical User Interface (GUI) which accepts a numerical value from the client. Convert the number in to words. Implement using RMI
-NumberToWordsService.java (Remote Interface):
+### 4.5 Number to Words Converter GUI using RMI
+
+**Description:** This practical implements a number-to-words converter using RMI with GUI. The server converts numeric input into English words (e.g., 123 → "One Hundred and Twenty Three"). Demonstrates RMI with string manipulation, complex algorithms, and natural language processing basics.
+
+**NumberToWordsService.java (Remote Interface):
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 public interface NumberToWordsService extends Remote {
@@ -1984,9 +2007,17 @@ Output:
  
 
 
-5. JDBC, Remote Object Communication & RMI
-Using MySQL create a Library database. Create table Book (Book_id, Book_name, Book_author) and retrieve the Book information from the Library database using the Remote Object Communication concept.
-Book.java:
+## 5. JDBC with Remote Object Communication & RMI - Library Database
+
+This section demonstrates integration of database operations with RMI. Shows how to create distributed database applications where the server handles database connectivity and clients access data remotely.
+
+**Description:** This practical implements a distributed library management system using RMI and JDBC. The server connects to a MySQL database containing book information and provides remote access to book data. Clients can retrieve all books from the library database remotely. Demonstrates three-tier architecture: Client → RMI Server → Database.
+
+**Database Schema:**
+- Database: Library
+- Table: Book (Book_id INT, Book_name VARCHAR, Book_author VARCHAR)
+
+**Book.java (Serializable Data Class):
 package ROC;
 import java.io.Serializable;
 public class Book implements Serializable {
@@ -2097,9 +2128,15 @@ Output:
 
 
  
-6. JDBC, Remote Object Communication & RMI
-Using MySQL create a Student database. Create table student_data(ID ,NAME , BRANCH ,PERCENTAGE ,EMAIL ) and retrieve the student_data information from Student database using Remote Object Communication concept.
-Student.java:
+## 6. JDBC with Remote Object Communication & RMI - Student Database
+
+**Description:** This practical implements a distributed student information system using RMI and JDBC. The server manages database connectivity to MySQL and provides remote access to student records. Demonstrates handling of multiple attributes and different data types (int, String, float) in distributed database applications.
+
+**Database Schema:**
+- Database: StudentDB
+- Table: student_data (ID INT, NAME VARCHAR, BRANCH VARCHAR, PERCENTAGE FLOAT, EMAIL VARCHAR)
+
+**Student.java (Serializable Data Class):
 package ROC2;
 import java.io.Serializable;
 public class Student implements Serializable {
@@ -2210,10 +2247,15 @@ Output:
  
 
 
-7. JDBC, Remote Object Communication & RMI
-Using MySQL create ElecrticBill database. Create table Bill(consumer_name, bill_due_date, bill_amount) and retrieve the Bill information from the ElecrticBill database using Remote Object Communication concept.
- 
-Bill.java:
+## 7. JDBC with Remote Object Communication & RMI - Electric Bill Database
+
+**Description:** This practical implements a distributed electric bill management system using RMI and JDBC. The server provides remote access to billing information from MySQL database. Demonstrates handling of Date objects and financial data (float) in distributed systems.
+
+**Database Schema:**
+- Database: ElectricBillDB
+- Table: Bill (consumer_name VARCHAR, bill_due_date DATE, bill_amount FLOAT)
+
+**Bill.java (Serializable Data Class):
 import java.io.Serializable;
 import java.util.Date;
 public class Bill implements Serializable {
@@ -2506,8 +2548,33 @@ public class ElectionMain {
     }
 }
 
+**Output:**
 
-Output:
+---
+
+## Summary
+
+This repository covers comprehensive practical implementations in distributed systems:
+
+1. **Socket Programming**: TCP and UDP communication for client-server applications
+2. **Remote Procedure Call (RPC)**: Procedure-based remote execution
+3. **Remote Method Invocation (RMI)**: Object-oriented distributed computing
+4. **GUI Integration**: User-friendly interfaces with RMI backend
+5. **Database Integration**: Three-tier architecture with JDBC and RMI
+6. **Distributed Algorithms**: Mutual exclusion and leader election
+
+**Technologies Used:**
+- Java Socket Programming (TCP/UDP)
+- Java RMI Framework
+- Java Swing (GUI)
+- JDBC (MySQL/Oracle Database Connectivity)
+- Multi-threading and Concurrency
+- Distributed Algorithms (Token Ring, Bully Election)
+
+**Author:** Student with Roll No. C24120
+
+---
+
 
 
 
