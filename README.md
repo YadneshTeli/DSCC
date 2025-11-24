@@ -5,6 +5,36 @@ This repository contains practical implementations covering various distributed 
 
 Table Of Contents
 
+- [1. Remote Process Communication](#1-remote-process-communication)
+  - [1.1 Multi-Client Chat Server using Socket](#11-multi-client-chat-server-using-socket)
+  - [1.2 Server Calculator using RPC (UDP Datagram)](#12-server-calculator-using-rpc-udp-datagram)
+  - [1.3 Date Time Server using RPC (UDP Datagram)](#13-date-time-server-using-rpc-udp-datagram)
+  - [1.4 Server Calculator using RPC (TCP Server Socket)](#14-server-calculator-using-rpc-tcp-server-socket)
+  - [1.5 Date Time Server using RPC (TCP Server Socket)](#15-date-time-server-using-rpc-tcp-server-socket)
+- [2. Remote Procedure Call](#2-remote-procedure-call)
+  - [2.1 Calculator Server with Multiple Operations](#21-calculator-server-with-multiple-operations)
+  - [2.2 Date Time Server with date() and time() Methods](#22-date-time-server-with-date-and-time-methods)
+  - [2.3 Time Addition Server](#23-time-addition-server)
+  - [2.4 String Reverse and Palindrome Checker](#24-string-reverse-and-palindrome-checker)
+  - [2.5 Odd/Even Server with Multiplication Table](#25-oddeven-server-with-multiplication-table)
+- [3. RMI Based Exercises](#3-rmi-based-exercises)
+  - [3.1 Addition Service using RMI](#31-addition-service-using-rmi)
+  - [3.2 Date Time Service using RMI](#32-date-time-service-using-rmi)
+  - [3.3 Equation Solver using RMI - (a+b)²](#33-equation-solver-using-rmi---ab²)
+  - [3.4 Dual Equation Solver using RMI - (a+b)² and (a-b)²](#34-dual-equation-solver-using-rmi---ab²-and-a-b²)
+- [4. Remote Method Invocation with Graphical User Interface](#4-remote-method-invocation-with-graphical-user-interface)
+  - [4.1 Addition GUI using RMI](#41-addition-gui-using-rmi)
+  - [4.2 Factorial Calculator GUI using RMI](#42-factorial-calculator-gui-using-rmi)
+  - [4.3 Basic Calculator GUI using RMI](#43-basic-calculator-gui-using-rmi)
+  - [4.4 Greatest Number Finder GUI using RMI](#44-greatest-number-finder-gui-using-rmi)
+  - [4.5 Number to Words Converter GUI using RMI](#45-number-to-words-converter-gui-using-rmi)
+- [5. JDBC with Remote Object Communication & RMI - Library Database](#5-jdbc-with-remote-object-communication--rmi---library-database)
+- [6. JDBC with Remote Object Communication & RMI - Student Database](#6-jdbc-with-remote-object-communication--rmi---student-database)
+- [7. JDBC with Remote Object Communication & RMI - Electric Bill Database](#7-jdbc-with-remote-object-communication--rmi---electric-bill-database)
+- [8. Implementation of Mutual Exclusion using Token Ring Algorithm](#8-implementation-of-mutual-exclusion-using-token-ring-algorithm)
+- [9. Implementation of Bully Election Algorithm](#9-implementation-of-bully-election-algorithm)
+- [Summary](#summary)
+
 ---
 
 
