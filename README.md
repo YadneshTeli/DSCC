@@ -1,8 +1,9 @@
 # Distributed Systems and Cloud Computing (DSCC) Practicals
-
-**Roll No:** C24120
+ 
 
 This repository contains practical implementations covering various distributed systems concepts including Socket Programming, Remote Procedure Calls (RPC), Remote Method Invocation (RMI), JDBC with Remote Object Communication, and Distributed Algorithms.
+
+Table Of Contents
 
 ---
 
@@ -2674,7 +2675,6 @@ This repository covers comprehensive practical implementations in distributed sy
 - JDBC (MySQL/Oracle Database Connectivity)
 - Multi-threading and Concurrency
 - Distributed Algorithms (Token Ring, Bully Election)
-
-**Author:** Student with Roll No. C24120
+ 
 
 ---
