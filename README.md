@@ -15,6 +15,7 @@ This section demonstrates socket programming in Java using both TCP (Socket) and
 **Description:** This practical implements a multi-threaded chat server that can handle multiple clients simultaneously. The server broadcasts messages from one client to all other connected clients, enabling real-time group communication. Uses TCP sockets for reliable message delivery.
 
 **MultiClientChatServer.java:**
+```java
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -106,7 +107,9 @@ class ClientHandler implements Runnable {
     }
 }
 
+```
 **MultiClientChatClient.java:**
+```java
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -149,6 +152,7 @@ public class MultiClientChatClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -158,6 +162,7 @@ public class MultiClientChatClient {
 **Description:** This practical demonstrates a calculator server using UDP (Datagram) sockets implementing basic RPC concepts. The server receives arithmetic operation requests from clients (ADD, SUB, MUL, DIV) and returns the computed results. UDP provides connectionless, fast communication suitable for simple request-response patterns.
 
 **CalculatorServer.java:**
+```java
 package socket_prac;
 import java.net.*;
 import java.io.*;
@@ -231,7 +236,9 @@ public class CalculatorServer {
     }
 }
 
+```
 **CalculatorClient.java:**
+```java
 package socket_prac;
 import java.net.*;
 import java.io.*;
@@ -272,6 +279,7 @@ public class CalculatorClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -281,6 +289,7 @@ public class CalculatorClient {
 **Description:** This practical implements a Date-Time server using UDP datagrams. Clients can request either the current date or time from the server. The server processes the request and sends back the formatted date/time information. Demonstrates simple RPC implementation with stateless communication.
 
 **DateTimeServer.java:**
+```java
 package socket_prac;
 import java.net.*;
 import java.io.*;
@@ -334,7 +343,9 @@ public class DateTimeServer {
     }
 }
 
+```
 **DateTimeClient.java:**
+```java
 package socket_prac;
 
 import java.net.*;
@@ -383,6 +394,7 @@ public class DateTimeClient {
 }
 
 
+```
 **Output:**
 
 ---
@@ -392,6 +404,7 @@ public class DateTimeClient {
 **Description:** This practical implements a calculator server using TCP sockets (ServerSocket) for reliable connection-oriented communication. Unlike the UDP version, this maintains a persistent connection with the client, allowing multiple calculations in a single session. Provides better reliability for critical arithmetic operations.
 
 **CalculatorServer.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -501,6 +514,7 @@ Output:
 
 
 
+```
 **Output:**
 
 ---
@@ -510,6 +524,7 @@ Output:
 **Description:** This practical implements a Date-Time server using TCP sockets, providing reliable connection-oriented communication. Clients maintain a persistent connection and can request date or time information multiple times. The TCP connection ensures reliable delivery of date/time data.
 
 **DateTimeServer.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -609,6 +624,7 @@ Output:
 
 
 
+```
 **Output:**
 
 ---
@@ -622,6 +638,7 @@ This section covers server-client applications implementing RPC concepts for var
 **Description:** A comprehensive calculator server implementing multiple arithmetic operations (ADD, SUB, MUL, DIV). The server processes operation requests from clients and returns computed results. Demonstrates basic RPC pattern with procedure-based remote execution.
 
 **CalculatorServer.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -731,6 +748,7 @@ Output:
 
 
 
+```
 **Output:**
 
 ---
@@ -740,6 +758,7 @@ Output:
 **Description:** This practical implements a Date-Time server with specific remote procedures for retrieving date and time separately. Clients can invoke date() or time() methods remotely, demonstrating procedural remote invocation pattern.
 
 **DateTimeServer.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -833,6 +852,7 @@ public class DateTimeClient {
  
 
 
+```
 **Output:**
 
 ---
@@ -894,6 +914,7 @@ public class TimeAdditionServer {
 }
 
 **TimeAdditionClient.java:**
+```java
 package socket_prac;
  
 import java.io.*;
@@ -934,6 +955,7 @@ public class TimeAdditionClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -948,6 +970,7 @@ public class TimeAdditionClient {
 3. Client receives reversed string and checks for palindrome
 
 **ReverseServer.java:**
+```java
 import java.io.*;
 import java.net.*;
  
@@ -1014,6 +1037,7 @@ public class ReverseClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -1029,6 +1053,7 @@ public class ReverseClient {
 4. If even, client calculates and displays the multiplication table (1-10)
 
 **OddEvenServer.java:**
+```java
 import java.io.*;
 import java.net.*;
  
@@ -1098,6 +1123,7 @@ public class OddEvenClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -1111,6 +1137,7 @@ This section covers Remote Method Invocation (RMI) implementations for various c
 **Description:** This practical implements basic RMI architecture with a simple addition service. Demonstrates the core components of RMI: Remote Interface, Remote Object Implementation, RMI Server (with registry), and RMI Client. Shows how to perform remote method invocation for arithmetic operations.
 
 **AdditionInterface.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  
@@ -1118,7 +1145,9 @@ public interface AdditionInterface extends Remote {
     int add(int a, int b) throws RemoteException;
 }
 
+```
 **AdditionImpl.java (Remote Object Implementation):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
  
@@ -1134,7 +1163,9 @@ public class AdditionImpl extends UnicastRemoteObject implements AdditionInterfa
     }
 }
 
+```
 **AdditionServer.java (RMI Server):**
+```java
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
  
@@ -1179,6 +1210,7 @@ public class AdditionClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -1188,6 +1220,7 @@ public class AdditionClient {
 **Description:** This practical implements a time service using RMI that retrieves current date and time from the server. The server method returns formatted date-time string to the client. Demonstrates RMI with return of complex data types (String) and server-side time processing.
 
 **TimeService.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  
@@ -1195,7 +1228,9 @@ public interface TimeService extends Remote {
     String getDateTime() throws RemoteException;
 }
 
+```
 **TimeServiceImpl.java (Remote Object Implementation):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.time.LocalDateTime;
@@ -1215,7 +1250,9 @@ public class TimeServiceImpl extends UnicastRemoteObject implements TimeService 
     }
 }
 
+```
 **TimeServer.java (RMI Server):**
+```java
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
  
@@ -1255,6 +1292,7 @@ Output:
 
 
 
+```
 **Output:**
 
 ---
@@ -1264,6 +1302,7 @@ Output:
 **Description:** This practical implements an algebraic equation solver using RMI. The server computes the expansion of (a+b)² = a² + 2ab + b² given values of a and b. Demonstrates RMI with mathematical computations and parameter passing.
 
 **EquationService.java (Remote Interface):**
+```java
 package RMI_based;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1290,7 +1329,9 @@ public class EquationServiceImpl extends UnicastRemoteObject implements Equation
     }
 }
 
+```
 **EquationServer.java (RMI Server):**
+```java
 package RMI_based;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -1337,6 +1378,7 @@ public class EquationClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -1346,6 +1388,7 @@ public class EquationClient {
 **Description:** This practical extends the equation solver to compute both (a+b)² and (a-b)² algebraic expansions. The server returns an array of results to the client. Demonstrates RMI with multiple computations and array return types.
 
 **EquationService.java (Remote Interface):**
+```java
 package RMI_based;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1373,7 +1416,9 @@ public class EquationServiceImpl extends UnicastRemoteObject implements Equation
     }
 }
 
+```
 **EquationServer.java (RMI Server):**
+```java
 package RMI_based;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -1391,7 +1436,9 @@ public class EquationServer {
     }
 }
 
+```
 **EquationClient.java (RMI Client):**
+```java
 package RMI_based;
 import java.rmi.Naming;
 import java.util.Scanner;
@@ -1426,6 +1473,7 @@ Output:
  
 
 
+```
 ## 4. Remote Method Invocation with Graphical User Interface
 
 This section combines RMI with Java Swing GUI, creating user-friendly interfaces for distributed applications. Demonstrates integration of RMI backend services with interactive frontend clients.
@@ -1444,6 +1492,7 @@ public interface AdditionService extends Remote {
 }
 
 **AdditionServiceImpl.java (Remote Object Implementation):**
+```java
 package RMI_GUI;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -1460,7 +1509,9 @@ public class AdditionServiceImpl extends UnicastRemoteObject implements Addition
     }
 }
 
+```
 **AdditionServer.java (RMI Server):**
+```java
 package RMI_GUI;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -1544,6 +1595,7 @@ Output:
  
 
 
+```
 ### 4.2 Factorial Calculator GUI using RMI
 
 **Description:** This practical implements a factorial calculator with GUI using RMI. The client provides an input field for the number, and the server computes the factorial remotely. Demonstrates RMI with iterative algorithms and larger result values (using long data type).
@@ -1558,6 +1610,7 @@ public interface FactorialService extends Remote {
 }
 
 **FactorialServiceImpl.java (Remote Object Implementation):**
+```java
 package RMI_GUI;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -1577,7 +1630,9 @@ public class FactorialServiceImpl extends UnicastRemoteObject implements Factori
     }
 }
 
+```
 **FactorialServer.java (RMI Server):**
+```java
 package RMI_GUI;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -1660,6 +1715,7 @@ Output:
 
 
 
+```
 ### 4.3 Basic Calculator GUI using RMI
 
 **Description:** This practical implements a complete basic calculator with GUI supporting all four arithmetic operations (add, subtract, multiply, divide) using RMI. The server provides separate methods for each operation with error handling (division by zero). Demonstrates comprehensive RMI service with multiple methods.
@@ -1675,6 +1731,7 @@ import java.rmi.RemoteException;
 }
 
 **CalculatorServiceImpl.java (Remote Object Implementation):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 public class CalculatorServiceImpl extends UnicastRemoteObject implements CalculatorService {
@@ -1696,7 +1753,9 @@ public class CalculatorServiceImpl extends UnicastRemoteObject implements Calcul
     }
 }
 
+```
 **CalculatorServer.java (RMI Server):**
+```java
 package RMI_GUI;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -1713,7 +1772,9 @@ public class AdditionServer {
     }
 }
 
+```
 **CalculatorClientGUI.java (RMI Client with GUI):**
+```java
 package RMI_GUI;
 import javax.swing.*;
 import java.awt.*;
@@ -1777,6 +1838,7 @@ Output:
 
 
 
+```
 ### 4.4 Greatest Number Finder GUI using RMI
 
 **Description:** This practical implements a comparison service using RMI with GUI. The client inputs two numbers, and the server determines the greatest using conditional logic. Demonstrates RMI with comparison operations and decision-making on the server side.
@@ -1790,6 +1852,7 @@ public interface GreatestService extends Remote {
 }
 
 **GreatestServiceImpl.java (Remote Object Implementation):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
  
@@ -1803,7 +1866,9 @@ public class GreatestServiceImpl extends UnicastRemoteObject implements Greatest
     }
 }
 
+```
 **GreatestServer.java (RMI Server):**
+```java
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
  
@@ -1889,6 +1954,7 @@ Output:
 
 
 
+```
 ### 4.5 Number to Words Converter GUI using RMI
 
 **Description:** This practical implements a number-to-words converter using RMI with GUI. The server converts numeric input into English words (e.g., 123 → "One Hundred and Twenty Three"). Demonstrates RMI with string manipulation, complex algorithms, and natural language processing basics.
@@ -1901,6 +1967,7 @@ public interface NumberToWordsService extends Remote {
 }
 
 **NumberToWordsServiceImpl.java (Remote Object Implementation):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 public class NumberToWordsServiceImpl extends UnicastRemoteObject implements NumberToWordsService {
@@ -1929,7 +1996,9 @@ public class NumberToWordsServiceImpl extends UnicastRemoteObject implements Num
     }
 }
 
+```
 **NumberToWordsServer.java (RMI Server):**
+```java
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 public class NumberToWordsServer {
@@ -1944,7 +2013,9 @@ public class NumberToWordsServer {
     }
 }
 
+```
 **NumberToWordsClientGUI.java (RMI Client with GUI):**
+```java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -2007,6 +2078,7 @@ Output:
  
 
 
+```
 ## 5. JDBC with Remote Object Communication & RMI - Library Database
 
 This section demonstrates integration of database operations with RMI. Shows how to create distributed database applications where the server handles database connectivity and clients access data remotely.
@@ -2039,6 +2111,7 @@ public class Book implements Serializable {
 }
 
 **LibraryService.java (Remote Interface):**
+```java
 package ROC;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -2047,7 +2120,9 @@ public interface LibraryService extends Remote {
     List<Book> getAllBooks() throws RemoteException;
 }
 
+```
 **LibraryServer.java (RMI Server):**
+```java
 package ROC;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -2064,7 +2139,9 @@ public class LibraryServer {
     }
 }
 
+```
 **LibraryServiceImpl.java (Remote Object Implementation with JDBC):**
+```java
 package ROC;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -2101,7 +2178,9 @@ public class LibraryServiceImpl extends UnicastRemoteObject implements LibrarySe
     }
 }
 
+```
 **LibraryClient.java (RMI Client):**
+```java
 package ROC;
 import java.rmi.Naming;
 import java.util.List;
@@ -2128,6 +2207,7 @@ Output:
 
 
  
+```
 ## 6. JDBC with Remote Object Communication & RMI - Student Database
 
 **Description:** This practical implements a distributed student information system using RMI and JDBC. The server manages database connectivity to MySQL and provides remote access to student records. Demonstrates handling of multiple attributes and different data types (int, String, float) in distributed database applications.
@@ -2166,6 +2246,7 @@ public interface StudentService extends Remote {
 }
 
 **StudentServer.java (RMI Server):**
+```java
 package ROC2;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -2182,7 +2263,9 @@ public class StudentServer {
     }
 }
 
+```
 **StudentServiceImpl.java (Remote Object Implementation with JDBC):**
+```java
 package ROC2;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -2223,7 +2306,9 @@ public class StudentServiceImpl extends UnicastRemoteObject implements StudentSe
     }
 }
 
+```
 **StudentClient.java (RMI Client):**
+```java
 package ROC2;
 import java.rmi.Naming;
 import java.util.List;
@@ -2247,6 +2332,7 @@ Output:
  
 
 
+```
 ## 7. JDBC with Remote Object Communication & RMI - Electric Bill Database
 
 **Description:** This practical implements a distributed electric bill management system using RMI and JDBC. The server provides remote access to billing information from MySQL database. Demonstrates handling of Date objects and financial data (float) in distributed systems.
@@ -2276,6 +2362,7 @@ public class Bill implements Serializable {
 }
 
 **BillService.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -2283,7 +2370,9 @@ public interface BillService extends Remote {
     List<Bill> getAllBills() throws RemoteException;
 }
 
+```
 **BillServer.java (RMI Server):**
+```java
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 public class BillServer {
@@ -2300,7 +2389,9 @@ public class BillServer {
     }
 }
 
+```
 **BillServiceImpl.java (Remote Object Implementation with JDBC):**
+```java
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.sql.*;
@@ -2338,7 +2429,9 @@ public class BillServiceImpl extends UnicastRemoteObject implements BillService 
     }
 }
 
+```
 **BillClient.java (RMI Client):**
+```java
 import java.rmi.Naming;
 import java.util.List;
 public class BillClient {
@@ -2356,6 +2449,7 @@ public class BillClient {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -2372,6 +2466,7 @@ public class BillClient {
 - Fair scheduling (each process gets equal opportunity)
 
 **TokenRing.java (Token Manager):**
+```java
 class TokenRing {
     private int numProcesses;
     private volatile int tokenHolder = 0;
@@ -2394,7 +2489,9 @@ class TokenRing {
     }
 }
 
+```
 **Process.java (Process Thread):**
+```java
 class Process extends Thread {
     private int id;
     private TokenRing ring;
@@ -2422,7 +2519,9 @@ class Process extends Thread {
     }
 }
 
+```
 **TokenRingMain.java (Main Application):**
+```java
 package prac9;
 
 public class TokenRingMain {
@@ -2436,6 +2535,7 @@ public class TokenRingMain {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -2452,6 +2552,7 @@ public class TokenRingMain {
 - Coordinator announcement and acknowledgment
 
 **Process.java (Process with Election Logic):**
+```java
 package prac10;
 
 public class Process extends Thread {
@@ -2528,7 +2629,9 @@ public class Process extends Thread {
     }
 }
 
+```
 **ElectionMain.java (Main Application):**
+```java
 package prac10;
 
 public class ElectionMain {
@@ -2548,6 +2651,7 @@ public class ElectionMain {
     }
 }
 
+```
 **Output:**
 
 ---
@@ -2574,7 +2678,3 @@ This repository covers comprehensive practical implementations in distributed sy
 **Author:** Student with Roll No. C24120
 
 ---
-
-
-
-
