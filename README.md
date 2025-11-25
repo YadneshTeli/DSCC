@@ -496,7 +496,10 @@ public class CalculatorServer {
         }
     }
 }
-CalculatorClient.java:
+```
+
+**CalculatorClient.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -534,14 +537,6 @@ public class CalculatorClient {
         }
     }
 }
- 
- 
- 
- 
- 
- 
-Output:
-
 
 
 
@@ -603,10 +598,11 @@ public class DateTimeServer {
         }
     }
 }
-
+```
  
 
-DateTimeClient.java:
+**DateTimeClient.java:**
+```java
 package socket_prac;
  
 import java.io.*;
@@ -645,12 +641,6 @@ public class DateTimeClient {
         }
     }
 }
-
- 
-
-
-Output:
- 
   
 
 
@@ -730,7 +720,9 @@ public class CalculatorServer {
         }
     }
 }
-CalculatorClient.java:
+```
+**CalculatorClient.java:**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -768,13 +760,6 @@ public class CalculatorClient {
         }
     }
 }
- 
- 
- 
- 
- 
- 
-Output:
 
 
 
@@ -1029,11 +1014,12 @@ public class ReverseServer {
         }
     }
 }
-
+```
  
 
 
-ReverseClient.java:
+**ReverseClient.java:**
+```java
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -1113,12 +1099,13 @@ public class OddEvenServer {
         }
     }
 }
-
+```
  
 
 
 
-OddEvenClient.java:
+**OddEvenClient.java:**
+```java
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -1212,11 +1199,12 @@ public class AdditionServer {
         }
     }
 }
-
+```
  
 
 
-AdditionClient.java (RMI Client):
+**AdditionClient.java (RMI Client):**
+```java
 import java.rmi.Naming;
 import java.util.Scanner;
  
@@ -1299,11 +1287,12 @@ public class TimeServer {
         }
     }
 }
-
+```
  
 
 
-TimeClient.java (RMI Client):
+**TimeClient.java (RMI Client):**
+```java
 import java.rmi.Naming;
  
 public class TimeClient {
@@ -1317,10 +1306,6 @@ public class TimeClient {
         }
     }
 }
-Output:
- 
-
-
 
 
 ```
@@ -1379,11 +1364,12 @@ public class EquationServer {
         }
     }
 }
-
+```
  
 
 
-EquationClient.java (RMI Client):
+**EquationClient.java (RMI Client):**
+```java
 package RMI_based;
 import java.rmi.Naming;
 import java.util.Scanner;
@@ -1495,16 +1481,11 @@ public class EquationClient {
         }
     }
 }
-Output:
- 
-
- 
-
-
- 
 
 
 ```
+**Output:**
+
 ## 4. Remote Method Invocation with Graphical User Interface
 
 This section combines RMI with Java Swing GUI, creating user-friendly interfaces for distributed applications. Demonstrates integration of RMI backend services with interactive frontend clients.
@@ -1513,7 +1494,8 @@ This section combines RMI with Java Swing GUI, creating user-friendly interfaces
 
 **Description:** This practical implements a graphical calculator for addition using RMI. The GUI client provides text fields for input numbers and displays results. The server performs the addition remotely. Shows integration of Swing components with RMI for user-friendly distributed computing.
 
-**AdditionService.java (Remote Interface):
+**AdditionService.java (Remote Interface):**
+```java
 package RMI_GUI;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1521,6 +1503,7 @@ import java.rmi.RemoteException;
 public interface AdditionService extends Remote {
     int add(int a, int b) throws RemoteException;
 }
+```
 
 **AdditionServiceImpl.java (Remote Object Implementation):**
 ```java
@@ -1558,12 +1541,13 @@ public class AdditionServer {
         }
     }
 }
- 
+```
 
  
  
  
-AdditionClientGUI.java (RMI Client):
+**AdditionClientGUI.java (RMI Client):**
+```java
 package RMI_GUI;
 import javax.swing.*;
 import java.awt.*;
@@ -1616,22 +1600,16 @@ public class AdditionClientGUI extends JFrame {
         new AdditionClientGUI();
     }
 }
- 
-Output:
- 
-
- 
-
-
- 
-
-
 ```
+**Output:** 
+
+ 
 ### 4.2 Factorial Calculator GUI using RMI
 
 **Description:** This practical implements a factorial calculator with GUI using RMI. The client provides an input field for the number, and the server computes the factorial remotely. Demonstrates RMI with iterative algorithms and larger result values (using long data type).
 
-**FactorialService.java (Remote Interface):
+**FactorialService.java (Remote Interface):**
+```java
 package RMI_GUI;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -1639,6 +1617,7 @@ import java.rmi.RemoteException;
 public interface FactorialService extends Remote {
     long findFactorial(int n) throws RemoteException;
 }
+```
 
 **FactorialServiceImpl.java (Remote Object Implementation):**
 ```java
@@ -1680,10 +1659,11 @@ public class FactorialServer {
         }
     }
 }
- 
+```
 
  
-FactorialClientGUI.java (RMI Client):
+**FactorialClientGUI.java (RMI Client):**
+```java
 package RMI_GUI;
  
 import javax.swing.*;
@@ -1733,25 +1713,19 @@ public class FactorialClientGUI extends JFrame {
     }
 }
  
- 
- 
- 
- 
- 
-Output:
- 
-
- 
-
-
-
-
 ```
+
+ 
+ 
+**Output:**
+ 
+
 ### 4.3 Basic Calculator GUI using RMI
 
 **Description:** This practical implements a complete basic calculator with GUI supporting all four arithmetic operations (add, subtract, multiply, divide) using RMI. The server provides separate methods for each operation with error handling (division by zero). Demonstrates comprehensive RMI service with multiple methods.
 
-**CalculatorService.java (Remote Interface):
+**CalculatorService.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  public interface CalculatorService extends Remote {
@@ -1858,30 +1832,23 @@ public class AdditionClientGUI extends JFrame {
         new AdditionClientGUI();
     }
 }
- 
-Output:
- 
-
- 
-
-
- 
-
-
-
 ```
+**Output:**
+ 
+
 ### 4.4 Greatest Number Finder GUI using RMI
 
 **Description:** This practical implements a comparison service using RMI with GUI. The client inputs two numbers, and the server determines the greatest using conditional logic. Demonstrates RMI with comparison operations and decision-making on the server side.
 
-**GreatestService.java (Remote Interface):
+**GreatestService.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
  
 public interface GreatestService extends Remote {
     int findGreatest(int a, int b) throws RemoteException;
 }
-
+```
 **GreatestServiceImpl.java (Remote Object Implementation):**
 ```java
 import java.rmi.server.UnicastRemoteObject;
@@ -1915,11 +1882,12 @@ public class GreatestServer {
         }
     }
 }
-
+```
  
 
 
-GreatestClientGUI.java (RMI Client):
+**GreatestClientGUI.java (RMI Client):**
+```java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -1975,27 +1943,24 @@ public class GreatestClientGUI extends JFrame {
         new GreatestClientGUI();
     }
 }
-Output:
- 
-
- 
-
-
- 
-
-
 
 ```
+**Output:**
+ 
+
+
 ### 4.5 Number to Words Converter GUI using RMI
 
 **Description:** This practical implements a number-to-words converter using RMI with GUI. The server converts numeric input into English words (e.g., 123 → "One Hundred and Twenty Three"). Demonstrates RMI with string manipulation, complex algorithms, and natural language processing basics.
 
-**NumberToWordsService.java (Remote Interface):
+**NumberToWordsService.java (Remote Interface):**
+```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 public interface NumberToWordsService extends Remote {
     String convertNumberToWords(int number) throws RemoteException;
 }
+```
 
 **NumberToWordsServiceImpl.java (Remote Object Implementation):**
 ```java
@@ -2097,19 +2062,11 @@ public class NumberToWordsClientGUI extends JFrame {
         new NumberToWordsClientGUI();
     }
 }
- 
- 
- 
-Output:
- 
-
- 
-
-
- 
-
-
 ```
+ 
+ 
+**Output:**
+ 
 ## 5. JDBC with Remote Object Communication & RMI - Library Database
 
 This section demonstrates integration of database operations with RMI. Shows how to create distributed database applications where the server handles database connectivity and clients access data remotely.
@@ -2229,16 +2186,11 @@ public class LibraryClient {
         }
     }
 }
- 
-Output:
-
- 
-
- 
-
-
- 
 ```
+ 
+**Output:**
+
+ 
 ## 6. JDBC with Remote Object Communication & RMI - Student Database
 
 **Description:** This practical implements a distributed student information system using RMI and JDBC. The server manages database connectivity to MySQL and provides remote access to student records. Demonstrates handling of multiple attributes and different data types (int, String, float) in distributed database applications.
@@ -2353,17 +2305,12 @@ public class StudentClient {
         } catch (Exception e) {            e.printStackTrace();        }
     }
 }
-Output:
-
- 
-
- 
-
-
- 
-
-
 ```
+
+**Output:**
+
+ 
+
 ## 7. JDBC with Remote Object Communication & RMI - Electric Bill Database
 
 **Description:** This practical implements a distributed electric bill management system using RMI and JDBC. The server provides remote access to billing information from MySQL database. Demonstrates handling of Date objects and financial data (float) in distributed systems.
@@ -2372,7 +2319,8 @@ Output:
 - Database: ElectricBillDB
 - Table: Bill (consumer_name VARCHAR, bill_due_date DATE, bill_amount FLOAT)
 
-**Bill.java (Serializable Data Class):
+**Bill.java (Serializable Data Class):**
+```java
 import java.io.Serializable;
 import java.util.Date;
 public class Bill implements Serializable {
@@ -2391,6 +2339,7 @@ public class Bill implements Serializable {
         return "Consumer: " + consumerName + ", Due Date: " + billDueDate + ", Amount: " + billAmount;
     }
 }
+```
 
 **BillService.java (Remote Interface):**
 ```java
