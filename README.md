@@ -2212,12 +2212,17 @@ public class LibraryClient {
 package ROC2;
 import java.io.Serializable;
 public class Student implements Serializable {
-    private int id;    private String name;
-    private String branch;    private float percentage;
+    private int id;    
+    private String name;
+    private String branch;    
+    private float percentage;
     private String email;
     public Student(int id, String name, String branch, float percentage, String email) {
-        this.id = id;        this.name = name;
-        this.branch = branch;        this.percentage = percentage;        this.email = email;
+        this.id = id;        
+        this.name = name;
+        this.branch = branch;
+        this.percentage = percentage;
+        this.email = email;
     }
     public int getId() { return id; }
     public String getName() { return name; }
