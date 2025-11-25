@@ -822,10 +822,11 @@ public class DateTimeServer {
         }
     }
 }
-
+```
  
 
-DateTimeClient.java:
+**DateTimeClient.java:**
+```java
 package socket_prac;
  
 import java.io.*;
@@ -885,6 +886,7 @@ public class DateTimeClient {
    - Total minutes only
 
 **TimeAdditionServer.java**
+```java
 package socket_prac;
 import java.io.*;
 import java.net.*;
@@ -928,7 +930,7 @@ public class TimeAdditionServer {
         }
     }
 }
-
+```
 **TimeAdditionClient.java:**
 ```java
 package socket_prac;
@@ -1326,8 +1328,10 @@ import java.rmi.RemoteException;
 public interface EquationService extends Remote {
     int solveEquation(int a, int b) throws RemoteException;
 }
- 
-EquationServiceImpl.java (Remote Object Implementation):
+```
+
+**EquationServiceImpl.java (Remote Object Implementation):**
+```java
 package RMI_based;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -1413,8 +1417,10 @@ import java.rmi.RemoteException;
 public interface EquationService extends Remote {
     int solveEquation(int a, int b) throws RemoteException;
 }
- 
-EquationServiceImpl.java (Remote Object Implementation):
+```
+
+**EquationServiceImpl.java (Remote Object Implementation):**
+```java
 package RMI_based;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
@@ -1734,7 +1740,7 @@ import java.rmi.RemoteException;
     double multiply(double a, double b) throws RemoteException;
     double divide(double a, double b) throws RemoteException;
 }
-
+```
 **CalculatorServiceImpl.java (Remote Object Implementation):**
 ```java
 import java.rmi.server.UnicastRemoteObject;
@@ -2077,7 +2083,8 @@ This section demonstrates integration of database operations with RMI. Shows how
 - Database: Library
 - Table: Book (Book_id INT, Book_name VARCHAR, Book_author VARCHAR)
 
-**Book.java (Serializable Data Class):
+**Book.java (Serializable Data Class):**
+```java
 package ROC;
 import java.io.Serializable;
 public class Book implements Serializable {
@@ -2097,6 +2104,7 @@ public class Book implements Serializable {
         return "Book ID: " + bookId + ", Title: " + bookName + ", Author: " + bookAuthor;
     }
 }
+```
 
 **LibraryService.java (Remote Interface):**
 ```java
@@ -2199,7 +2207,8 @@ public class LibraryClient {
 - Database: StudentDB
 - Table: student_data (ID INT, NAME VARCHAR, BRANCH VARCHAR, PERCENTAGE FLOAT, EMAIL VARCHAR)
 
-**Student.java (Serializable Data Class):
+**Student.java (Serializable Data Class):**
+```java
 package ROC2;
 import java.io.Serializable;
 public class Student implements Serializable {
@@ -2219,7 +2228,10 @@ public class Student implements Serializable {
                ", Percentage: " + percentage + ", Email: " + email;
     }
 }
-StudentService.java (Remote Interface):
+```
+
+**StudentService.java (Remote Interface):**
+```java
 package ROC2;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -2227,7 +2239,7 @@ import java.util.List;
 public interface StudentService extends Remote {
     List<Student> getAllStudents() throws RemoteException;
 }
-
+```
 **StudentServer.java (RMI Server):**
 ```java
 package ROC2;
