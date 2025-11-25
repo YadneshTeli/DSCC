@@ -2083,6 +2083,40 @@ This section demonstrates integration of database operations with RMI. Shows how
 - Database: Library
 - Table: Book (Book_id INT, Book_name VARCHAR, Book_author VARCHAR)
 
+**SQL Commands**
+```sql
+-- Create database and use it
+CREATE DATABASE IF NOT EXISTS LibraryDB;
+USE LibraryDB;
+
+-- Create Book table
+CREATE TABLE Book (
+  Book_id   INT PRIMARY KEY AUTO_INCREMENT,
+  Book_name VARCHAR(255) NOT NULL,
+  Book_author VARCHAR(255) NOT NULL
+);
+
+-- Sample inserts
+INSERT INTO Book (Book_name, Book_author) VALUES
+('Distributed Systems', 'Andrew S. Tanenbaum'),
+('Cloud Computing', 'Rajkumar Buyya'),
+('Operating Systems', 'Abraham Silberschatz');
+
+-- Select all books
+SELECT * FROM Book;
+
+-- Find books by author (example)
+SELECT * FROM Book WHERE Book_author LIKE '%Tanenbaum%';
+
+-- Update a book title
+UPDATE Book
+SET Book_name = 'Distributed Systems: Principles and Paradigms'
+WHERE Book_id = 1;
+
+-- Delete a book
+DELETE FROM Book WHERE Book_id = 3;
+```
+
 **Book.java (Serializable Data Class):**
 ```java
 package ROC;
@@ -2206,6 +2240,52 @@ public class LibraryClient {
 **Database Schema:**
 - Database: StudentDB
 - Table: student_data (ID INT, NAME VARCHAR, BRANCH VARCHAR, PERCENTAGE FLOAT, EMAIL VARCHAR)
+
+**SQL queries**
+```sql
+-- Create database and use it
+CREATE DATABASE IF NOT EXISTS StudentDB;
+USE StudentDB;
+
+-- Create student_data table
+CREATE TABLE student_data (
+  ID INT PRIMARY KEY AUTO_INCREMENT,
+  NAME VARCHAR(150) NOT NULL,
+  BRANCH VARCHAR(100),
+  PERCENTAGE DECIMAL(5,2),
+  EMAIL VARCHAR(255)
+);
+
+-- Sample inserts
+INSERT INTO student_data (NAME, BRANCH, PERCENTAGE, EMAIL) VALUES
+('Alice Kumar', 'Computer Science', 82.50, 'alice@example.com'),
+('Bob Singh', 'IT', 76.25, 'bob@example.com'),
+('Chitra Rao', 'MCA', 91.00, 'chitra@example.com');
+
+-- Select all students
+SELECT * FROM student_data;
+
+-- Students with percentage >= 75
+SELECT * FROM student_data WHERE PERCENTAGE >= 75 ORDER BY PERCENTAGE DESC;
+
+-- Count students per branch
+SELECT BRANCH, COUNT(*) AS num_students
+FROM student_data
+GROUP BY BRANCH;
+
+-- Average percentage by branch
+SELECT BRANCH, ROUND(AVG(PERCENTAGE),2) AS avg_percentage
+FROM student_data
+GROUP BY BRANCH;
+
+-- Update student email
+UPDATE student_data
+SET EMAIL = 'alice.kumar@college.example'
+WHERE ID = 1;
+
+-- Delete a student
+DELETE FROM student_data WHERE ID = 2;
+```
 
 **Student.java (Serializable Data Class):**
 ```java
@@ -2335,6 +2415,51 @@ public class StudentClient {
 **Database Schema:**
 - Database: ElectricBillDB
 - Table: Bill (consumer_name VARCHAR, bill_due_date DATE, bill_amount FLOAT)
+
+**SQL queries**
+```SQL queries
+-- Create database and use it
+CREATE DATABASE IF NOT EXISTS ElectricBillDB;
+USE ElectricBillDB;
+
+-- Create Bill table
+CREATE TABLE Bill (
+  bill_id INT PRIMARY KEY AUTO_INCREMENT,
+  consumer_name VARCHAR(255),
+  bill_due_date DATE,
+  bill_amount DECIMAL(10,2),
+  is_paid BOOLEAN DEFAULT FALSE
+);
+
+-- Sample inserts
+INSERT INTO Bill (consumer_name, bill_due_date, bill_amount) VALUES
+('Ramesh Gupta', '2025-12-10', 1250.75),
+('Sunita Sharma', '2025-12-05', 980.00),
+('Amit Patel', '2025-12-20', 450.50);
+
+-- Select all bills
+SELECT * FROM Bill;
+
+-- Bills due within next 7 days (MySQL example)
+SELECT * FROM Bill
+WHERE bill_due_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY);
+
+-- Overdue bills
+SELECT * FROM Bill
+WHERE bill_due_date < CURDATE() AND is_paid = FALSE;
+
+-- Total amount due
+SELECT SUM(bill_amount) AS total_due FROM Bill WHERE is_paid = FALSE;
+
+-- Mark a bill as paid (transaction-safe)
+START TRANSACTION;
+UPDATE Bill SET is_paid = TRUE WHERE bill_id = 1;
+-- optionally insert to payments table here
+COMMIT;
+
+-- Delete a bill record
+DELETE FROM Bill WHERE bill_id = 3;
+```
 
 **Bill.java (Serializable Data Class):**
 ```java
